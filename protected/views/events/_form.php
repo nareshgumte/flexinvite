@@ -6,20 +6,23 @@
 
 <div class="form">
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'sp-events-form',
-	'enableAjaxValidation'=>false,
+	<?php $form=$this->beginWidget('CActiveForm', array(
+			'id'=>'sp-events-form',
+			'enableAjaxValidation'=>false,
+			'enableClientValidation'=>true,
+			'htmlOptions'=>array(
+					'validateOnSubmit'=>true,
+					'enctype'=>'multipart/form-data'
+			),
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">
+		Fields with <span class="required">*</span> are required.
+	</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'user_id'); ?>
-		<?php echo $form->textField($model,'user_id'); ?>
-		<?php echo $form->error($model,'user_id'); ?>
-	</div>
+
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'event_name'); ?>
@@ -47,20 +50,16 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'event_image'); ?>
-		<?php echo $form->textField($model,'event_image',array('size'=>60,'maxlength'=>256)); ?>
+		<?php echo $form->fileField($model,'event_image'); ?>
 		<?php echo $form->error($model,'event_image'); ?>
 	</div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'event_status'); ?>
-		<?php echo $form->textField($model,'event_status'); ?>
-		<?php echo $form->error($model,'event_status'); ?>
-	</div>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
 	</div>
 
-<?php $this->endWidget(); ?>
+	<?php $this->endWidget(); ?>
 
-</div><!-- form -->
+</div>
+<!-- form -->

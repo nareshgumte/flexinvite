@@ -3,7 +3,7 @@
 /* @var $model SpEvents */
 
 $this->breadcrumbs=array(
-	'Sp Events'=>array('index'),
+	
 	'Create',
 );
 
@@ -13,6 +13,6 @@ $this->breadcrumbs=array(
 ); */
 ?>
 
-<h1>Create SpEvents</h1>
+<h1>Create An Event</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

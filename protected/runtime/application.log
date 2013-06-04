@@ -1,0 +1,638 @@
+2013/05/07 16:41:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:41:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:42:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:42:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:42:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:42:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:42:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:42:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:46:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/secondproject/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/secondproject/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/secondproject/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/secondproject/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:49:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /var/www/yii/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(270): CController->missingAction('')
+#1 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#2 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#3 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#4 /var/www/secondproject/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:50:07 [error] [exception.CException] exception 'CException' with message 'IndexController cannot find the requested view "index".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /var/www/secondproject/protected/controllers/IndexController.php(14): CController->render('index')
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): IndexController->actionIndex()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#9 /var/www/secondproject/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:50:08 [error] [exception.CException] exception 'CException' with message 'IndexController cannot find the requested view "index".' in /var/www/yii/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#1 /var/www/secondproject/protected/controllers/IndexController.php(14): CController->render('index')
+#2 /var/www/yii/framework/web/actions/CInlineAction.php(49): IndexController->actionIndex()
+#3 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#7 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#8 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#9 /var/www/secondproject/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/07 16:52:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/24 12:04:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/29 16:08:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/05/29 17:43:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/login
+---
+2013/06/04 14:35:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/06/04 14:35:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+---
+2013/06/04 14:40:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/login
+---
+2013/06/04 14:40:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/login
+---
+2013/06/04 14:41:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/
+---
+2013/06/04 14:55:55 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[42000] [1049] Unknown database 'secondproject'' in /var/www/yii/framework/db/CDbConnection.php:381
+Stack trace:
+#0 /var/www/yii/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /var/www/yii/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /var/www/yii/framework/base/CModule.php(387): CDbConnection->init()
+#3 /var/www/yii/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/yii/framework/gii/generators/model/ModelCode.php(57): CModule->__get('db')
+#5 /var/www/yii/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/yii/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/yii/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/yii/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('')
+#13 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model')
+#14 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#15 /var/www/secondproject/index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/secondproject/gii/model
+HTTP_REFERER=http://localhost/secondproject/gii/default/index
+---
+2013/06/04 14:57:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'secondproject.login' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `login`.
+in /var/www/secondproject/index.php (13)
+2013/06/04 15:31:18 [error] [php] include(Staff.php): failed to open stream: No such file or directory (/var/www/yii/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/secondproject/protected/components/UserIdentity.php(34): spl_autoload_call()
+#1 /var/www/secondproject/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
+#3 /var/www/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#4 /var/www/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#5 /var/www/secondproject/protected/controllers/SiteController.php(94): LoginForm->validate()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#9 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/secondproject/index.php(13): CWebApplication->run()
+REQUEST_URI=/secondproject/site/login
+in /var/www/secondproject/protected/components/UserIdentity.php (34)
+in /var/www/secondproject/protected/models/LoginForm.php (52)
+in /var/www/secondproject/protected/controllers/SiteController.php (94)
+2013/06/04 15:32:42 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('credentials/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/secondproject/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/secondproject/credentials/admin
+HTTP_REFERER=http://localhost/secondproject/site/login
+---
+2013/06/04 15:33:00 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('credentials/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/secondproject/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/secondproject/credentials/admin
+HTTP_REFERER=http://localhost/secondproject/credentials/create
+---
+2013/06/04 15:33:05 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('credentials/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/secondproject/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/secondproject/credentials/admin
+HTTP_REFERER=http://localhost/secondproject/credentials/create
+---
+2013/06/04 15:33:44 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('credentials/adm...')
+#9 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/secondproject/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/secondproject/credentials/admin
+HTTP_REFERER=http://localhost/secondproject/credentials/index
+---
+2013/06/04 15:36:24 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/secondproject/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/secondproject/users/admin
+HTTP_REFERER=http://localhost/secondproject/users/index
+---
+2013/06/04 15:37:36 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /var/www/yii/framework/web/auth/CAccessControlFilter.php:179
+Stack trace:
+#0 /var/www/yii/framework/web/auth/CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /var/www/yii/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /var/www/yii/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /var/www/yii/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /var/www/yii/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /var/www/yii/framework/web/CController.php(291): CFilterChain->run()
+#6 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('admin')
+#8 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('users/admin')
+#9 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#10 /var/www/secondproject/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/secondproject/users/admin
+HTTP_REFERER=http://localhost/secondproject/users/index
+---
+2013/06/04 15:42:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/index
+---
+2013/06/04 15:49:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/index
+---
+2013/06/04 15:49:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/index
+---
+2013/06/04 15:49:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index".' in /var/www/yii/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#1 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#2 /var/www/secondproject/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/site/index
+---
+2013/06/04 15:54:00 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "baseUrl".' in /var/www/yii/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/secondproject/protected/views/site/index.php(22): CComponent->__call('baseUrl', Array)
+#1 /var/www/secondproject/protected/views/site/index.php(22): CWebApplication->baseUrl()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/second...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/second...', NULL, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/second...', NULL, true)
+#5 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#6 /var/www/secondproject/protected/controllers/SiteController.php(32): CController->render('index')
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#13 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/secondproject/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/secondproject/site/index
+HTTP_REFERER=http://localhost/secondproject/users/create
+---
+2013/06/04 15:54:01 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "baseUrl".' in /var/www/yii/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/secondproject/protected/views/site/index.php(22): CComponent->__call('baseUrl', Array)
+#1 /var/www/secondproject/protected/views/site/index.php(22): CWebApplication->baseUrl()
+#2 /var/www/yii/framework/web/CBaseController.php(126): require('/var/www/second...')
+#3 /var/www/yii/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/second...', NULL, true)
+#4 /var/www/yii/framework/web/CController.php(869): CBaseController->renderFile('/var/www/second...', NULL, true)
+#5 /var/www/yii/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#6 /var/www/secondproject/protected/controllers/SiteController.php(32): CController->render('index')
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('index')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#13 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/secondproject/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/secondproject/site/index
+HTTP_REFERER=http://localhost/secondproject/users/create
+---
+2013/06/04 16:45:05 [error] [php] include(Staff.php): failed to open stream: No such file or directory (/var/www/yii/framework/YiiBase.php:421)
+Stack trace:
+#0 /var/www/secondproject/protected/components/UserIdentity.php(39): spl_autoload_call()
+#1 /var/www/secondproject/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate()
+#3 /var/www/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute()
+#4 /var/www/yii/framework/base/CModel.php(159): CInlineValidator->validate()
+#5 /var/www/secondproject/protected/controllers/SiteController.php(94): LoginForm->validate()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/yii/framework/web/CController.php(286): SiteController->runAction()
+#9 /var/www/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /var/www/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/secondproject/index.php(13): CWebApplication->run()
+REQUEST_URI=/secondproject/site/login
+in /var/www/secondproject/protected/components/UserIdentity.php (39)
+in /var/www/secondproject/protected/models/LoginForm.php (52)
+in /var/www/secondproject/protected/controllers/SiteController.php (94)
+2013/06/04 16:46:12 [error] [exception.CException] exception 'CException' with message 'Property "UserIdentity._id" is not defined.' in /var/www/yii/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/secondproject/protected/components/UserIdentity.php(44): CComponent->__set('_id', '4')
+#1 /var/www/secondproject/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#2 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#3 /var/www/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#4 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#5 /var/www/secondproject/protected/controllers/SiteController.php(94): CModel->validate()
+#6 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#11 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#13 /var/www/secondproject/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/secondproject/site/login
+HTTP_REFERER=http://localhost/secondproject/site/login
+---
+2013/06/04 16:53:58 [error] [exception.CException] exception 'CException' with message 'UserIdentity and its behaviors do not have a method or closure named "createUrl".' in /var/www/yii/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/secondproject/protected/components/UserIdentity.php(49): CComponent->__call('createUrl', Array)
+#1 /var/www/secondproject/protected/components/UserIdentity.php(49): UserIdentity->createUrl('users/admin')
+#2 /var/www/secondproject/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#3 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/secondproject/protected/controllers/SiteController.php(94): CModel->validate()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#13 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/secondproject/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/
+---
+2013/06/04 16:55:17 [error] [exception.CException] exception 'CException' with message 'UserIdentity and its behaviors do not have a method or closure named "createUrl".' in /var/www/yii/framework/base/CComponent.php:265
+Stack trace:
+#0 /var/www/secondproject/protected/components/UserIdentity.php(49): CComponent->__call('createUrl', Array)
+#1 /var/www/secondproject/protected/components/UserIdentity.php(49): UserIdentity->createUrl('users/admin')
+#2 /var/www/secondproject/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#3 /var/www/yii/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#4 /var/www/yii/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#5 /var/www/yii/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#6 /var/www/secondproject/protected/controllers/SiteController.php(94): CModel->validate()
+#7 /var/www/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#8 /var/www/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#9 /var/www/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#10 /var/www/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/yii/framework/web/CWebApplication.php(282): CController->run('login')
+#12 /var/www/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#13 /var/www/yii/framework/base/CApplication.php(169): CWebApplication->processRequest()
+#14 /var/www/secondproject/index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/secondproject/
+HTTP_REFERER=http://localhost/secondproject/
+---

@@ -4,7 +4,7 @@
 
 $this->breadcrumbs=array(
 	'Sp Events'=>array('index'),
-	$model->event_id=>array('view','id'=>$model->event_id),
+	/*$model->event_id=>array('view','id'=>$model->event_id),*/
 	'Update',
 );
 
@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update SpEvents <?php echo $model->event_id; ?></h1>
+<h1>Update Event <?php echo $model->event_name; ?></h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

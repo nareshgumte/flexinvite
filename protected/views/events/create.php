@@ -3,14 +3,13 @@
 /* @var $model SpEvents */
 
 $this->breadcrumbs=array(
-	
 	'Create',
 );
-
-/* $this->menu=array(
+/*
+$this->menu=array(
 	array('label'=>'List SpEvents', 'url'=>array('index')),
 	array('label'=>'Manage SpEvents', 'url'=>array('admin')),
-); */
+);*/ 
 ?>
 
 <h1>Create An Event</h1>

@@ -13,6 +13,8 @@ return array(
     'import' => array(
         'application.models.*',
         'application.components.*',
+        'application.components.plugins.*',
+        'application.components.conf.*',
     ),
     'modules' => array(
         // uncomment the following to enable the Gii tool
@@ -35,7 +37,6 @@ return array(
             'urlFormat' => 'path',
             'showScriptName' => false,
             'rules' => array(
-               
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',
                 '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
@@ -46,10 +47,10 @@ return array(
           ), */
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=flexinvite',
+            'connectionString' => 'mysql:host=localhost;dbname=secondproject',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'padnet',
+            'password' => 'purpletalk',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
@@ -77,6 +78,22 @@ return array(
     'params' => array(
         // this is used in contact page
         'adminEmail' => 'mahesh.k@purpletalk.com',
+        'openinviter_settings' => array(
+            'username' => "maheshk",
+            'private_key' => "1905153cb0834961103e3059ca6088d4",
+            'cookie_path' => "/tmp",
+            'message_body' => "You are invited to http://www.test.com",
+            'message_subject' => " is inviting you to http://www.test.com",
+            'transport' => "curl",
+            'local_debug' => "on_error",
+            'remote_debug' => "",
+            'hosted' => "", 'proxies' => array(),
+            'stats' => "",
+            'plugins_cache_time' => "1800",
+            'plugins_cache_file' => "oi_plugins.php",
+            'update_files' => "1",
+            'stats_user' => "",
+            'stats_password' => "")
     ),
     'defaultController' => 'site/login',
 );

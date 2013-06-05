@@ -10,13 +10,17 @@
     $form = $this->beginWidget('CActiveForm', array(
         'id' => 'sp-friends-form',
         'enableAjaxValidation' => false,
-    ));
+        'enableClientValidation' => true,
+        'htmlOptions' => array(
+            'validateOnSubmit' => true
+        ),
+            ));
     ?>
 
     <p class="note">Fields with <span class="required">*</span> are required.</p>
 
     <?php //echo $form->errorSummary($model);  ?>
- 
+
 
     <div class="row">
         <?php echo $form->labelEx($model, 'firstname'); ?>
@@ -60,6 +64,10 @@
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
     </div>
+
+    <div class="row">
+        <?php echo CHtml::link('Import Contacts', $this->createUrl('friends/importContacts'), array('class' => 'link')) ?>
+    </div>    
 
     <?php $this->endWidget(); ?>
 

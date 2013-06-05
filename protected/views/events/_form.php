@@ -15,7 +15,7 @@
             'validateOnSubmit' => true,
             'enctype' => 'multipart/form-data'
         ),
-    ));
+            ));
     ?>
 
     <p class="note">
@@ -55,8 +55,11 @@
         <?php echo $form->fileField($model, 'event_image'); ?>
         <?php echo $form->error($model, 'event_image'); ?>
     </div>
-
-
+    <?php
+    if (isset($model->event_image)) {
+        echo CHtml::image(Yii::app()->request->baseUrl . '/images/eventImages/' . $model->event_image, '', array('height' => '50', 'width' => '50'));
+    }
+    ?>       
     <div class="row buttons">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
     </div>

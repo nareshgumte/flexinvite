@@ -26,6 +26,12 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
+<?php if(Yii::app()->user->hasFlash('success')):?>
+<div class="info">
+	<?php echo Yii::app()->user->getFlash('success'); ?>
+</div>
+<?php endif; ?>
+
 <h1>Manage Sp Friends</h1>
 
 <p>

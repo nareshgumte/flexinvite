@@ -98,8 +98,35 @@ class SpFriends extends CActiveRecord {
         $criteria->compare('whois', $this->whois, true);
 
         return new CActiveDataProvider($this, array(
-            'criteria' => $criteria,
-        ));
+                    'criteria' => $criteria,
+                ));
+    }
+
+    public function insertFriends($contacts, $whois) {
+        $connection = Yii::app()->db;
+        if (!empty($contacts)) {
+            foreach ($contacts as $key => $value) {
+
+                $command = "SELECT email FROM `sp_friends` WHERE email='" . $key . "'";
+                $dataReader = $connection->createCommand($command)->query();
+
+                $rows = $dataReader->readAll();
+                if (!$rows) {
+                    $parameters = array(":user_id" => Yii::app()->user->user_id, ':firstname' => $value, ':lastname' => $value,
+                        ':email' => $key, ':whois' => $whois);
+                    $sql = "insert into sp_friends (user_id, firstname,lastname,email,whois) values (:user_id, :firstname,:lastname,:email,:whois)";
+                    $res = $connection->createCommand($sql)->execute($parameters);
+                }
+            }
+            return true;
+        }
+        else{
+            return false;
+        }    
+        /* $sql = 'INSERT INTO sp_friends (user_id, firstname,lastname,email,whois) VALUES ' . $values;
+          $command = Yii::app()->db->createCommand($sql);
+          $command->execute();
+         */
     }
 
 }

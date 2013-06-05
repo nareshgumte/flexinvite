@@ -30,7 +30,11 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('event_image')); ?>:</b>
-	<?php echo CHtml::encode($data->event_image); ?>
+	<?php //echo CHtml::encode($data->event_image); ?>
+        <?php if($data->event_image!=''){ ?>
+    <img src="<?php echo Yii::app()->request->baseUrl.'/images/eventImages/'.$data->event_image; ?>" 
+            width="50" height="50" />
+     <?php } ?>  
 	<br />
 
 	<?php /*

@@ -4,41 +4,62 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="language" content="en" />
-
-        <!-- blueprint CSS framework -->
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/screen.css" media="screen, projection" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/print.css" media="print" />
-        <!--[if lt IE 8]>
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" media="screen, projection" />
-        <![endif]-->
-
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form.css" />
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap.css" rel="stylesheet"/>
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.css" rel="stylesheet"/>
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/font-awesome.css" rel="stylesheet"/>
+        <link href="<?php echo Yii::app()->request->baseUrl; ?>/css/bootswatch.css" rel="stylesheet"/>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery_002.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootswatch.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/popup.js"></script>
-
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
+    <body class="preview" id="top" data-spy="scroll" data-target=".subnav" data-offset="80">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#"><?php echo CHtml::encode(Yii::app()->name); ?></a>
+                    <div class="nav-collapse collapse" id="main-menu">
+                        <?php
+//                        $this->widget('zii.widgets.CMenu', array(
+//                            'items' => array(
+//                                array('label' => 'Create Event', 'url' => array('/events/create'), 'visible' => !Yii::app()->user->isGuest),
+//                                array('label' => 'Add Friends', 'url' => array('/friends/create'), 'visible' => !Yii::app()->user->isGuest),
+//                                array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+//                                array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
+//                            ),
+//                        ));
+                        ?>
+                        <ul class="nav" id="main-menu-left">
 
-    <body>
-
+                            <?php if (!Yii::app()->user->isGuest) { ?>
+                                <li>
+                                    <?php echo CHtml::link("Create Event", $this->createUrl('event/create')) ?>
+                                </li>
+                                <li>
+                                    <?php echo CHtml::link("Add Friends", $this->createUrl('friends/create')) ?>
+                                </li>
+                                <li>
+                                    <?php echo CHtml::link("Logout(" . Yii::app()->user->name . ")", $this->createUrl('site/logout')) ?>
+                                </li>
+                            <?php } else { ?>
+                                <li>
+                                    <?php echo CHtml::link("Login", $this->createUrl('site/login')); ?>
+                                </li>
+                            <?php } ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container" id="page">
 
-            <div id="header">
-                <div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-            </div><!-- header -->
-
-            <div id="mainmenu">
-                <?php
-                $this->widget('zii.widgets.CMenu', array(
-                    'items' => array(
-                        array('label' => 'Create Event', 'url' => array('/events/create'), 'visible' => !Yii::app()->user->isGuest),
-                        array('label' => 'Add Friends', 'url' => array('/friends/create'), 'visible' => !Yii::app()->user->isGuest),
-                        array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-                        array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
-                    ),
-                ));
-                ?>
-            </div><!-- mainmenu -->
             <?php if (isset($this->breadcrumbs)): ?>
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -50,15 +71,11 @@
             <?php echo $content; ?>
 
             <div class="clear"></div>
-
-            <!--	<div id="footer">
-                            Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-                            All Rights Reserved.<br/>
-            <?php echo Yii::powered(); ?>
+            <br><hr>
+                    <div id="footer">
+                        Copyright &copy; <?php echo date('Y'); ?> by Naresh.<br/>
+                        All Rights Reserved.<br/>
                     </div>
-                     footer -->
-
-        </div><!-- page -->
-
-    </body>
-</html>
+                    </div><!-- page -->
+                    </body>
+                    </html>

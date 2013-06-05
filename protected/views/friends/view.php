@@ -3,7 +3,7 @@
 /* @var $model SpFriends */
 
 $this->breadcrumbs=array(
-	'Sp Friends'=>array('index'),
+	'friends'=>array('index'),
 	$model->id,
 );
 

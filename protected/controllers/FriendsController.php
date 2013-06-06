@@ -26,11 +26,11 @@ class FriendsController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('view'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete', 'importContacts'),
+                'actions' => array('index','create', 'update', 'admin', 'delete', 'importContacts'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -68,7 +68,8 @@ class FriendsController extends Controller {
             $model->user_id = Yii::app()->user->user_id;
             if ($model->save()) {
                 /* $this->redirect(array('view','id'=>$model->id)); */
-                $this->redirect(array('admin'));
+                Yii::app()->user->setFlash('success', 'Successfully added new friend');
+                $this->redirect(array('friends/'));
             }
         }
 
@@ -90,8 +91,11 @@ class FriendsController extends Controller {
 
         if (isset($_POST['SpFriends'])) {
             $model->attributes = $_POST['SpFriends'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()){
+                //$this->redirect(array('view', 'id' => $model->id));
+                Yii::app()->user->setFlash('success', 'Successfully updated');
+                $this->redirect(array('friends/'));
+            }
         }
 
         $this->render('update', array(
@@ -116,7 +120,28 @@ class FriendsController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('SpFriends');
+        
+        $criteria = new CDbCriteria();
+        //get the events
+
+        
+        $criteria->order = "id ASC";
+        if (isset($_GET['q'])) {
+            $q = $_GET['q'];
+            $criteria->addSearchCondition('firstname', $q, true,'OR');
+            //$criteria->addSearchCondition('lastname', $q, true);
+            $criteria->addSearchCondition('lastname', $q, true,'OR');
+        }
+        //$model = IpLogin::model()->findAll($criteria);
+        $dataProvider = new CActiveDataProvider('SpFriends', array(
+                    'criteria' => $criteria,
+                    'pagination' => array(
+                        'pageSize' => 10,
+                    ),
+                ));
+        
+        
+        //$dataProvider = new CActiveDataProvider('SpFriends');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));

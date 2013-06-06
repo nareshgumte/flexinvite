@@ -25,11 +25,11 @@ class EventsController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('index', 'view'),
+                'actions' => array('view'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete'),
+                'actions' => array('index','create', 'update', 'admin', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -48,7 +48,7 @@ class EventsController extends Controller {
      */
     public function actionView($id) {
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $this->loadModel($id)
         ));
     }
 
@@ -76,7 +76,9 @@ class EventsController extends Controller {
             }
             if ($model->save()) {
                 //$this->redirect(array('view','id'=>$model->event_id));
-                $this->redirect(array('admin', 'id' => $model->event_id));
+                //$this->redirect(array('admin', 'id' => $model->event_id));
+                Yii::app()->user->setFlash('success', 'Successfully created event');
+                $this->redirect(array('events/'));
             }
         }
 
@@ -108,8 +110,11 @@ class EventsController extends Controller {
                 $model->event_image = $fileName;
             }
 
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->event_id));
+            if ($model->save()) {
+                //$this->redirect(array('view', 'id' => $model->event_id));
+                Yii::app()->user->setFlash('success', 'Successfully updated event');
+                $this->redirect(array('events/'));
+            }
         }
 
         $this->render('update', array(
@@ -134,7 +139,24 @@ class EventsController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('SpEvents');
+
+        $criteria = new CDbCriteria();
+        //get the events
+
+        
+        $criteria->order = "event_id ASC";
+        if (isset($_GET['q'])) {
+            $q = $_GET['q'];
+            $criteria->addSearchCondition('event_name', $q, true);
+        }
+        //$model = IpLogin::model()->findAll($criteria);
+        $dataProvider = new CActiveDataProvider('SpEvents', array(
+                    'criteria' => $criteria,
+                    'pagination' => array(
+                        'pageSize' => 5,
+                    ),
+                ));
+
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));

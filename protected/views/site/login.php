@@ -8,7 +8,7 @@ $this->breadcrumbs = array(
 );
 ?>
 <?php if (Yii::app()->user->hasFlash('success')): ?>
-    <div class="info">
+    <div class="alert alert-success">
         <?php echo Yii::app()->user->getFlash('success'); ?>
     </div>
 <?php endif; ?>
@@ -32,14 +32,14 @@ $form = $this->beginWidget('CActiveForm', array(
         <?php echo $form->labelEx($model, 'username', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo $form->textField($model, 'username', array('class' => 'input-xlarge')); ?>
-            <?php echo $form->error($model, 'password'); ?>
+            <?php echo $form->error($model, 'username'); ?>
         </div>
     </div>
     <div class="control-group">
         <?php echo $form->labelEx($model, 'password', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo $form->passwordField($model, 'password', array('class' => 'input-xlarge')); ?>
-            <?php echo $form->error($model, 'password', array('class' => '')); ?>
+            <?php echo $form->error($model, 'password'); ?>
         </div>
     </div>
 

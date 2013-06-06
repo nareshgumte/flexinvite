@@ -85,7 +85,8 @@ class SiteController extends Controller {
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login()) {
                 //$this->redirect(Yii::app()->user->returnUrl);
-                $this->redirect($this->createUrl('users/admin'));
+                //$this->redirect($this->createUrl('users/admin'));
+                $this->redirect($this->createUrl('events/'));
             }
         }
         // display the login form

@@ -42,6 +42,7 @@ class SpEvents extends CActiveRecord {
         // will receive user inputs.
         return array(
             array('event_name,event_desc,event_shortdesc,event_venue', 'required'),
+            array("event_image", 'file', 'allowEmpty' => true, 'types' => 'jpg,jpeg,gif,png'),
             array('user_id, event_status', 'numerical', 'integerOnly' => true),
             array('event_name, event_venue', 'length', 'max' => 32),
             array('event_shortdesc', 'length', 'max' => 512),

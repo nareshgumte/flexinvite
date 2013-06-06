@@ -40,10 +40,12 @@
 
                             <?php if (!Yii::app()->user->isGuest) { ?>
                                 <li>
-                                    <?php echo CHtml::link("Create Event", $this->createUrl('event/create')) ?>
+                                    <?php //echo CHtml::link("Create Event", $this->createUrl('events/create')) ?>
+                                    <?php echo CHtml::link("Events", $this->createUrl('events/')) ?>
                                 </li>
                                 <li>
-                                    <?php echo CHtml::link("Add Friends", $this->createUrl('friends/create')) ?>
+                                    <?php //echo CHtml::link("Add Friends", $this->createUrl('friends/create')) ?>
+                                    <?php echo CHtml::link("Friends", $this->createUrl('friends/')) ?>
                                 </li>
                                 <li>
                                     <?php echo CHtml::link("Logout(" . Yii::app()->user->name . ")", $this->createUrl('site/logout')) ?>
@@ -64,6 +66,7 @@
                 <?php
                 $this->widget('zii.widgets.CBreadcrumbs', array(
                     'links' => $this->breadcrumbs,
+                    'htmlOptions' => array("class" => 'breadcrumb'),
                 ));
                 ?><!-- breadcrumbs -->
             <?php endif ?>

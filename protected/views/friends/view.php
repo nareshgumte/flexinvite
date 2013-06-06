@@ -16,9 +16,9 @@ $this->menu=array(
 );
 ?>
 
-<h1>View SpFriends #<?php echo $model->id; ?></h1>
+<h1>View Friends #<?php echo $model->id; ?></h1>
 
-<?php $this->widget('zii.widgets.CDetailView', array(
+<?php /*$this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id',
@@ -29,4 +29,38 @@ $this->menu=array(
 		'phone',
 		'whois',
 	),
-)); ?>
+)); */
+?>
+
+<section id="tables">
+    <!--<div class="page-header">
+        <h1>Tables</h1>
+    </div>
+    -->
+
+    <table class="table table-bordered table-striped table-hover" style="width: 500px;">
+        <tbody>
+            <tr>
+                <td>First Name</td>
+                <td><?php echo $model->firstname; ?></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><?php echo $model->lastname; ?></td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><?php echo $model->email; ?></td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td><?php echo $model->phone; ?></td>
+            </tr>
+            <tr>
+                <td>Who is</td>
+                <td><?php echo $model->whois; ?></td>
+            </tr>
+            
+        </tbody>
+    </table>
+</section>    

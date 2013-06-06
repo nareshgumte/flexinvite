@@ -11,7 +11,10 @@
         'id' => 'sp-users-form',
         'enableAjaxValidation' => false,
         'enableClientValidation' => true,
-        'htmlOptions' => array('validateOnSubmit' => true)
+        'clientOptions' => array(
+                'validateOnSubmit' => true
+            ),
+        
     ));
     ?>
 
@@ -21,38 +24,49 @@
 
     <?php //echo $form->errorSummary($model);  ?>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'username'); ?>
-        <?php echo $form->textField($model, 'username'); ?>
-        <?php echo $form->error($model, 'username'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'username', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'username', array('class' => 'input-xlarge')); ?>
+            <?php echo $form->error($model, 'username'); ?>
+        </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'password'); ?>
-        <?php echo $form->passwordField($model, 'password'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'password', array('class' => 'control-label')); ?>
+        <div class="controls">
+        <?php echo $form->passwordField($model, 'password', array('class' => 'input-xlarge')); ?>
         <?php echo $form->error($model, 'password'); ?>
+        </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'firstname'); ?>
-        <?php echo $form->textField($model, 'firstname'); ?>
+   <div class="control-group">
+        <?php echo $form->labelEx($model, 'firstname', array('class' => 'control-label')); ?>
+       <div class="controls">
+        <?php echo $form->textField($model, 'firstname', array('class' => 'input-xlarge')); ?>
         <?php echo $form->error($model, 'firstname'); ?>
+       </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'lastname'); ?>
-        <?php echo $form->textField($model, 'lastname'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'lastname', array('class' => 'control-label')); ?>
+        <div class="controls">
+        <?php echo $form->textField($model, 'lastname', array('class' => 'input-xlarge')); ?>
         <?php echo $form->error($model, 'lastname'); ?>
+        </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'email'); ?>
-        <?php echo $form->textField($model, 'email'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'email', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'email', array('class' => 'input-xlarge')); ?>
         <?php echo $form->error($model, 'email'); ?>
+        </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'phone'); ?>
+     <div class="control-group">
+        <?php echo $form->labelEx($model, 'phone', array('class' => 'control-label')); ?>
+         <div class="controls">
         <?php
         $this->widget('CMaskedTextField', array(
             'model' => $model,
@@ -60,14 +74,16 @@
             'name' => 'phone',
             'id' => 'phone',
             'mask' => '+99-999-999-9999',
+            'htmlOptions'=>array('class'=>'input-xlarge')
         ));
         ?>
 
 
         <?php echo $form->error($model, 'phone'); ?>
+        </div> 
     </div>
     <div class="hint">Ex:+91-XXX-XXX-XXXX</div>
-    <div class="row buttons">
+     <div class="control-group">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
     </div>
 

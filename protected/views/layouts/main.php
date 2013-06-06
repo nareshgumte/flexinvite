@@ -26,16 +26,6 @@
                     </a>
                     <a class="brand" href="#"><?php echo CHtml::encode(Yii::app()->name); ?></a>
                     <div class="nav-collapse collapse" id="main-menu">
-                        <?php
-//                        $this->widget('zii.widgets.CMenu', array(
-//                            'items' => array(
-//                                array('label' => 'Create Event', 'url' => array('/events/create'), 'visible' => !Yii::app()->user->isGuest),
-//                                array('label' => 'Add Friends', 'url' => array('/friends/create'), 'visible' => !Yii::app()->user->isGuest),
-//                                array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
-//                                array('label' => 'Logout (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
-//                            ),
-//                        ));
-                        ?>
                         <ul class="nav" id="main-menu-left">
 
                             <?php if (!Yii::app()->user->isGuest) { ?>
@@ -74,11 +64,13 @@
             <?php echo $content; ?>
 
             <div class="clear"></div>
-            <br><hr>
-                    <div id="footer">
-                        Copyright &copy; <?php echo date('Y'); ?> by Naresh.<br/>
-                        All Rights Reserved.<br/>
-                    </div>
-                    </div><!-- page -->
-                    </body>
-                    </html>
+            </br></hr>
+            <div id="footer">
+                Copyright &copy; <?php echo date('Y'); ?> by Naresh.<br/>
+                All Rights Reserved.<br/>
+            </div>
+        </div><!-- page -->
+     
+
+    </body>
+</html>

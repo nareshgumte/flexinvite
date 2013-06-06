@@ -131,6 +131,7 @@ class FriendsController extends Controller {
             $criteria->addSearchCondition('firstname', $q, true,'OR');
             //$criteria->addSearchCondition('lastname', $q, true);
             $criteria->addSearchCondition('lastname', $q, true,'OR');
+            $criteria->addSearchCondition('whois', $q, true,'OR');
         }
         //$model = IpLogin::model()->findAll($criteria);
         $dataProvider = new CActiveDataProvider('SpFriends', array(

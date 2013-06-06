@@ -68,7 +68,7 @@ $this->menu = array(
                 // 'summaryText' => 'kjjkhkhk',//'{count} records(s) found.',
                 ),
                 'enableSorting' => true,
-                'template' => "{items}\n{pager}", //this remove: Displaying #... of ... result
+                
             ));
             ?>
         </tbody>

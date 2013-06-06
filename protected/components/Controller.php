@@ -1,23 +1,43 @@
 <?php
+
 /**
  * Controller is the customized base controller class.
  * All controller classes for this application should extend from this base class.
  */
-class Controller extends CController
-{
-	/**
-	 * @var string the default layout for the controller view. Defaults to '//layouts/column1',
-	 * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
-	 */
-	public $layout='//layouts/column1';
-	/**
-	 * @var array context menu items. This property will be assigned to {@link CMenu::items}.
-	 */
-	public $menu=array();
-	/**
-	 * @var array the breadcrumbs of the current page. The value of this property will
-	 * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
-	 * for more details on how to specify this property.
-	 */
-	public $breadcrumbs=array();
+class Controller extends CController {
+
+    /**
+     * @var string the default layout for the controller view. Defaults to '//layouts/column1',
+     * meaning using a single column layout. See 'protected/views/layouts/column1.php'.
+     */
+    public $layout = '//layouts/column1';
+
+    public function init() {
+        if (Yii::app()->user->isGuest) {
+            
+        } else {
+            $criteria = new CDbCriteria();
+            $criteria->compare('user_id', Yii::app()->user->user_id);
+            $criteria->addInCondition('type', array(1, 2));
+            
+            $userDe = SpCredentials::model()->find($criteria);
+            if (count($userDe) !=1) {
+                if (Yii::app()->controller->id != 'credentials')
+                    $this->redirect($this->createUrl('credentials/create'));
+            }
+        }
+    }
+
+    /**
+     * @var array context menu items. This property will be assigned to {@link CMenu::items}.
+     */
+    public $menu = array();
+
+    /**
+     * @var array the breadcrumbs of the current page. The value of this property will
+     * be assigned to {@link CBreadcrumbs::links}. Please refer to {@link CBreadcrumbs::links}
+     * for more details on how to specify this property.
+     */
+    public $breadcrumbs = array();
+
 }

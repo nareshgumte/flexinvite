@@ -14,7 +14,7 @@ class FriendsController extends Controller {
     public function filters() {
         return array(
             'accessControl', // perform access control for CRUD operations
-            'postOnly + delete', // we only allow deletion via POST request
+            //'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -26,7 +26,7 @@ class FriendsController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('view'),
+                'actions' => array('view','delete'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -109,11 +109,15 @@ class FriendsController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+        
+        
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        if (!isset($_GET['ajax'])){
+            //$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('friends/'));
+        }    
     }
 
     /**
@@ -123,9 +127,6 @@ class FriendsController extends Controller {
         
         $criteria = new CDbCriteria();
         //get the events
-
-        
-        $criteria->order = "id ASC";
         if (isset($_GET['q'])) {
             $q = $_GET['q'];
             $criteria->addSearchCondition('firstname', $q, true,'OR');
@@ -133,6 +134,12 @@ class FriendsController extends Controller {
             $criteria->addSearchCondition('lastname', $q, true,'OR');
             $criteria->addSearchCondition('whois', $q, true,'OR');
         }
+        if(!Yii::app()->user->isAdmin){
+            $user_id = Yii::app()->user->user_id;
+            $criteria->addSearchCondition('user_id', $user_id, true);
+        }    
+        $criteria->order = "id ASC";
+        
         //$model = IpLogin::model()->findAll($criteria);
         $dataProvider = new CActiveDataProvider('SpFriends', array(
                     'criteria' => $criteria,

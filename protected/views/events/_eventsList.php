@@ -23,9 +23,13 @@
         <a href="<?php echo $this->createUrl('events/update/',array("id" => $data->event_id)); ?>">   
              <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/edit.png', 'Edit', array('width' => 20)) ?>
         </a> 
-        <!--<a href="<?php echo $this->createUrl('events/update/' . $data->event_id); ?>">   
+        <a href="<?php echo $this->createUrl('events/delete/', array("id" => $data->event_id)); ?>" onclick="return confirm('Are you sure you want to delete this event?');">   
              <?php echo CHtml::image(Yii::app()->request->baseUrl . '/images/delete.png', 'Delete', array('width' => 20)) ?>
         </a> 
-        -->
+    </td>
+    <td>
+        <a href="<?php echo $this->createUrl('events/inviteFriends/',array("id"=> $data->event_id)); ?>">
+            Invite Friends
+        </a>
     </td>
 </tr>

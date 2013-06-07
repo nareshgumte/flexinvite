@@ -119,14 +119,20 @@ class SpFriends extends CActiveRecord {
                 }
             }
             return true;
-        }
-        else{
+        } else {
             return false;
-        }    
+        }
         /* $sql = 'INSERT INTO sp_friends (user_id, firstname,lastname,email,whois) VALUES ' . $values;
           $command = Yii::app()->db->createCommand($sql);
           $command->execute();
          */
+    }
+
+    public function getFriends($user_id) {
+        $criteria = new CDbCriteria;
+        $criteria->compare('user_id', $user_id);
+        $friendsList = SpFriends::model()->findAll($criteria);
+        return $friendsList;
     }
 
 }

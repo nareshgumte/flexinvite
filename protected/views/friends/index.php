@@ -68,6 +68,7 @@ $this->menu = array(
                 // 'summaryText' => 'kjjkhkhk',//'{count} records(s) found.',
                 ),
                 'enableSorting' => true,
+//                'template'=> '{items}{pager}',
                 
             ));
             ?>

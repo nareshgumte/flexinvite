@@ -29,7 +29,7 @@ class EventsController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index','create', 'update', 'admin', 'delete'),
+                'actions' => array('index', 'create', 'update', 'admin', 'delete', 'invitefriends'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -131,8 +131,10 @@ class EventsController extends Controller {
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        if (!isset($_GET['ajax'])) {
+            //$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('events/'));
+        }
     }
 
     /**
@@ -143,12 +145,17 @@ class EventsController extends Controller {
         $criteria = new CDbCriteria();
         //get the events
 
-        
-        $criteria->order = "event_id ASC";
+
+
         if (isset($_GET['q'])) {
             $q = $_GET['q'];
             $criteria->addSearchCondition('event_name', $q, true);
         }
+        if (!Yii::app()->user->isAdmin) {
+            $user_id = Yii::app()->user->user_id;
+            $criteria->addSearchCondition('user_id', $user_id, true);
+        }
+        $criteria->order = "event_id ASC";
         //$model = IpLogin::model()->findAll($criteria);
         $dataProvider = new CActiveDataProvider('SpEvents', array(
                     'criteria' => $criteria,
@@ -199,6 +206,61 @@ class EventsController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    public function actioninviteFriends($id) {
+        $user_id = Yii::app()->user->user_id;
+        $event_id = $id;
+        $criteria = new CDbCriteria;
+        $criteria->compare('user_id', $user_id);
+        if (isset($_GET['q'])) {
+            $q = $_GET['q'];
+            $criteria->addSearchCondition('firstname', $q, true);
+            $criteria->addSearchCondition('lastname', $q, true, 'OR');
+            $criteria->addSearchCondition('email', $q, true, 'OR');
+        }
+        $dataProvider = new CActiveDataProvider('SpFriends', array(
+                    'criteria' => $criteria,
+                    'pagination' => array(
+                        'pageSize' => 1000,
+                    ),
+                ));
+        //// get the group names
+        $criteria2 = new CDbCriteria();
+        $criteria2->compare('user_id', $user_id);
+        $groups = SpGroups::model()->findAll($criteria2);
+        
+      
+        if (isset($_POST['yt0'])) {
+             $model1 = new SpGroups;
+             $res =  $model1->insertMembers($_POST['cbox'],$_POST['group_name']);
+             if($res){
+                 Yii::app()->user->setFlash('success', 'Successfully added to group'); 
+                // $this->redirect(array('admin'));
+             }
+            
+            //$ids = implode(",", $ids);
+            /*$criteria1 = new CDbCriteria();
+            $criteria1->compare('user_id', Yii::app()->user->user_id);
+            $criteria1->addInCondition('id', $ids);
+            $selectedFriends = SpFriends::model()->findAll($criteria1);
+            foreach ($selectedFriends as $key => $value) {
+                echo ($value->phone) . "---";
+                echo ($value->firstname) . "---";
+                echo ($value->email) . "<br>";
+            }
+
+            if (isset($_POST['send_sms']) && isset($_POST['send_email'])) { // send invites through email and sms
+            } elseif (isset($_POST['send_sms']) && !isset($_POST['send_email'])) { // send invites through sms
+            } elseif (isset($_POST['send_email']) && !isset($_POST['send_sms'])) { // send invites through email
+            } else {
+                $this->setFlash("error", "Please select sending media.");
+            }*/
+            
+        }
+        //$dataProvider = SpFriends::model()->findAll($criteria);
+        //var_dump($dataProvider);exit;
+        $this->render("friends_list", array('dataProvider' => $dataProvider,'select'=>$groups));
     }
 
 }

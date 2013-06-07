@@ -52,8 +52,7 @@ $this->menu = array(
                 <th>Event Venue</th>
                 <th>Event Image</th>
                 <th>Actions</th>
-
-
+                <th>Invite</th>
             </tr>
         </thead>
         <tbody>

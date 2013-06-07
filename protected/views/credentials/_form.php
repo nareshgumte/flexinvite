@@ -21,26 +21,32 @@
 
     <?php //echo $form->errorSummary($model); ?>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'username'); ?>
-        <?php echo $form->textField($model, 'username', array('size' => 60, 'maxlength' => 64)); ?>
-        <?php echo $form->error($model, 'username'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'username' , array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'username', array('class' => 'input-xlarge')); ?>
+            <?php echo $form->error($model, 'username'); ?>
+        </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'password'); ?>
-        <?php echo $form->passwordField($model, 'password', array('size' => 60, 'maxlength' => 64)); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'password', array('class' => 'control-label')); ?>
+        <div class="controls">
+        <?php echo $form->passwordField($model, 'password', array('class' => 'input-xlarge')); ?>
         <?php echo $form->error($model, 'password'); ?>
+        </div>    
     </div>
 
-    <div class="row">
-        <?php echo $form->labelEx($model, 'type'); ?>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'type', array('class' => 'control-label')); ?>
+        <div class="controls">
         <?php echo $form->dropDownList($model, 'type', $item, array('prompt' => 'Select Provider')); ?>
         <?php echo $form->error($model, 'type'); ?>
+        </div>    
     </div>
 
-    <div class="row buttons">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+    <div class="control-group">
+        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class'=> 'btn')); ?>
     </div>
 
     <?php $this->endWidget(); ?>

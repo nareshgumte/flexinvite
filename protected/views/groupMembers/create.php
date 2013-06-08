@@ -1,18 +1,19 @@
 <?php
-/* @var $this SpGroupMembersController */
-/* @var $model SpGroupMembers */
+/* @var $this GroupMembersController */
+/* @var $model GroupMembers */
 
-$this->breadcrumbs=array(
-	'Sp Group Members'=>array('index'),
-	'Create',
+$this->breadcrumbs = array(
+    'Group Members' => array('index'),
+    'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List SpGroupMembers', 'url'=>array('index')),
-	array('label'=>'Manage SpGroupMembers', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'List Of GroupMembers', 'url' => array('groupMembers/index')),
+    array('label' => 'Create GroupMembers', 'url' => array('groupMembers/create')),
+    array('label' => 'Manage GroupMembers', 'url' => array('groupMembers/admin')),
 );
 ?>
 
-<h1>Create SpGroupMembers</h1>
+<h1>Create GroupMembers</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model' => $model)); ?>

@@ -1,13 +1,13 @@
 <?php
-/* @var $this SpGroupMembersController */
-/* @var $model SpGroupMembers */
+/* @var $this InvitationHistoryController */
+/* @var $model InvitationHistory */
 /* @var $form CActiveForm */
 ?>
 
 <div class="form">
 
 <?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'sp-group-members-form',
+	'id'=>'invitation-history-form',
 	'enableAjaxValidation'=>false,
 )); ?>
 
@@ -16,15 +16,27 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'event_id'); ?>
+		<?php echo $form->textField($model,'event_id'); ?>
+		<?php echo $form->error($model,'event_id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'group_id'); ?>
 		<?php echo $form->textField($model,'group_id'); ?>
 		<?php echo $form->error($model,'group_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'group_member_id'); ?>
-		<?php echo $form->textField($model,'group_member_id'); ?>
-		<?php echo $form->error($model,'group_member_id'); ?>
+		<?php echo $form->labelEx($model,'invited_date'); ?>
+		<?php echo $form->textField($model,'invited_date'); ?>
+		<?php echo $form->error($model,'invited_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
+		<?php echo $form->error($model,'user_id'); ?>
 	</div>
 
 	<div class="row buttons">

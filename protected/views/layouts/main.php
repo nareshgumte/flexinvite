@@ -16,18 +16,18 @@
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
     <body class="preview" id="top" data-spy="scroll" data-target=".subnav" data-offset="80">
+
         <div class="navbar navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container">
+                <div class="container" >
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
                     <a class="brand" href="#"><?php echo CHtml::encode(Yii::app()->name); ?></a>
-                    <div class="nav-collapse collapse" id="main-menu">
-                        <ul class="nav" id="main-menu-left">
-
+                    <div class="nav-collapse">
+                        <ul class="nav">
                             <?php if (!Yii::app()->user->isGuest) { ?>
                                 <li>
                                     <?php //echo CHtml::link("Create Event", $this->createUrl('events/create')) ?>
@@ -38,7 +38,17 @@
                                     <?php echo CHtml::link("Friends", $this->createUrl('friends/')) ?>
                                 </li>
                                 <li>
-                                    <?php echo CHtml::link("Logout(" . Yii::app()->user->name . ")", $this->createUrl('site/logout')) ?>
+                                    <?php echo CHtml::link("Groups", $this->createUrl('groups/')) ?>
+                                </li>
+                                <li>
+                                    <?php echo CHtml::link("Group Members", $this->createUrl('groupMembers/')) ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    if (Yii::app()->user->isAdmin) {
+                                        echo CHtml::link("Users", $this->createUrl('users/'));
+                                    }
+                                    ?>
                                 </li>
                             <?php } else { ?>
                                 <li>
@@ -46,31 +56,82 @@
                                 </li>
                             <?php } ?>
                         </ul>
-                    </div>
+                        <?php
+                        if (!Yii::app()->user->isGuest) {
+                            $id = Yii::app()->controller->id;
+                            $action = Yii::app()->controller->action->id;
+
+                            echo CHtml::beginForm(CHtml::normalizeUrl(array($id . "/" . $action)), 'get', array('id' => 'filter-form', 'class' => 'navbar-search pull-left'));
+                            echo CHtml::textField('q', (isset($_GET['q'])) ? $_GET['q'] : '', array(
+                                'id' => 'q',
+                                'class' => 'search-query span2',
+                                'placeholder' => 'Search..',
+                            ));
+                            echo "&nbsp;";
+                            echo CHtml::submitButton('Search', array('name' => 'Search', 'class' => 'btn', 'style' => 'margin:0;padding:6px 11px;float:right;'));
+                            echo CHtml::endForm();
+                            ?>
+
+                            <ul class="nav pull-right">
+                                <li class="divider-vertical"></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo Yii::app()->user->name; ?> <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <li><a href="#">Change Password</a></li>
+                                            <li> 
+                                                <?php echo CHtml::link("Change Credentials", $this->createUrl('Credentials/')) ?>
+                                            </li>
+                                            <li>
+                                                <?php echo CHtml::link('Invitaions History', $this->createUrl('InvitationHistory/index')); ?>
+                                            </li>
+                                            <li>
+                                                <?php echo CHtml::link("Logout", $this->createUrl('site/logout')) ?>
+                                            </li>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        <?php } ?>
+                    </div><!-- /.nav-collapse -->
                 </div>
-            </div>
-        </div>
+            </div><!-- /navbar-inner -->
+        </div><!-- /navbar -->
         <div class="container" id="page">
-
-            <?php if (isset($this->breadcrumbs)): ?>
+            <div style="float: left; width: 16%;" class="well">
                 <?php
-                $this->widget('zii.widgets.CBreadcrumbs', array(
-                    'links' => $this->breadcrumbs,
-                    'htmlOptions' => array("class" => 'breadcrumb'),
+                $this->beginWidget('zii.widgets.CPortlet', array(
                 ));
-                ?><!-- breadcrumbs -->
-            <?php endif ?>
+                $this->widget('zii.widgets.CMenu', array(
+                    'items' => $this->menu,
+                    'htmlOptions' => array('class' => 'nav nav-list'),
+                ));
+                $this->endWidget();
+//            
+                ?>    
+            </div>
 
-            <?php echo $content; ?>
+            <div style="width: 80%;float: right;">
+                <?php if (isset($this->breadcrumbs)): ?>
+                    <?php
+                    $this->widget('zii.widgets.CBreadcrumbs', array(
+                        'links' => $this->breadcrumbs,
+                        'htmlOptions' => array("class" => 'breadcrumb'),
+                    ));
+                    ?><!-- breadcrumbs -->
+                <?php endif ?>
 
-            <div class="clear"></div>
-            </br></hr>
+                <?php echo $content; ?>
+
+            </div>
             <div id="footer">
                 Copyright &copy; <?php echo date('Y'); ?> by Naresh.<br/>
                 All Rights Reserved.<br/>
             </div>
+
         </div><!-- page -->
-     
+        <div class="clear"></div>
 
     </body>
 </html>
+

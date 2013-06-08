@@ -1,7 +1,24 @@
+
+
 <?php
 /* @var $this FriendsController */
 /* @var $model SpFriends */
 /* @var $form CActiveForm */
+
+
+$this->breadcrumbs = array(
+    
+    'Import Contacts',
+);
+
+$this->menu = array(
+    array('label' => 'List SpFriends', 'url' => array('index')),
+    array('label' => 'Manage SpFriends', 'url' => array('admin')),
+    array('label' => 'Import Contacts', 'url' => array('friends/importContacts')),
+    
+);
+
+
 ?>
 <?php if (Yii::app()->user->hasFlash('error')): ?>
     <div class="info">

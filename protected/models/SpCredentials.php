@@ -74,7 +74,9 @@ class SpCredentials extends CActiveRecord {
         // should not be searched.
 
         $criteria = new CDbCriteria;
-
+        //if (Yii::app()->user->isAdmin) {
+            $criteria->addInCondition('user_id', array(Yii::app()->user->user_id));
+        //}
         $criteria->compare('id', $this->id);
         $criteria->compare('username', $this->username, true);
         $criteria->compare('password', $this->password, true);
@@ -153,6 +155,27 @@ class SpCredentials extends CActiveRecord {
         } else {
             return true;
         }
+    }
+
+    /**
+     * Mask part of a string
+     *
+     * <code>
+     * echo maskString('4012888888881881', 6, 4, '*');
+     * </code>
+     *
+     * @param   string  $s      String to process
+     * @param   integer $start  Number of characters to leave at start of string
+     * @param   integer $end    Number of characters to leave at end of string
+     * @param   string  $char   Character to mask string with
+     * @return  string
+     */
+    public function maskString($char = 'X') {
+        $middle = '';
+        for ($i = 0; $i < strlen($this->password); $i++) {
+            $middle .= $char;
+        }
+        return $middle;
     }
 
 }

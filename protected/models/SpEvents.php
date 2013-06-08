@@ -11,6 +11,7 @@
  * @property string $event_shortdesc
  * @property string $event_venue
  * @property string $event_image
+ * @property string $event_date_time
  * @property integer $event_status
  *
  * The followings are the available model relations:
@@ -41,8 +42,7 @@ class SpEvents extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('event_name,event_desc,event_shortdesc,event_venue', 'required'),
-            array("event_image", 'file', 'allowEmpty' => true, 'types' => 'jpg,jpeg,gif,png'),
+            array('event_name,event_desc,event_shortdesc,event_venue,event_date_time', 'required'),
             array('user_id, event_status', 'numerical', 'integerOnly' => true),
             array('event_name, event_venue', 'length', 'max' => 32),
             array('event_shortdesc', 'length', 'max' => 512),
@@ -50,7 +50,7 @@ class SpEvents extends CActiveRecord {
             array('event_desc', 'safe'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('event_id, user_id, event_name, event_desc, event_shortdesc, event_venue, event_image, event_status', 'safe', 'on' => 'search'),
+            array('event_id, user_id, event_name, event_desc, event_shortdesc, event_venue, event_image, event_date_time, event_status', 'safe', 'on' => 'search'),
         );
     }
 
@@ -77,6 +77,7 @@ class SpEvents extends CActiveRecord {
             'event_shortdesc' => 'Event Shortdesc',
             'event_venue' => 'Event Venue',
             'event_image' => 'Event Image',
+            'event_date_time' => 'Event Date Time',
             'event_status' => 'Event Status',
         );
     }
@@ -98,6 +99,7 @@ class SpEvents extends CActiveRecord {
         $criteria->compare('event_shortdesc', $this->event_shortdesc, true);
         $criteria->compare('event_venue', $this->event_venue, true);
         $criteria->compare('event_image', $this->event_image, true);
+        $criteria->compare('event_date_time', $this->event_date_time, true);
         $criteria->compare('event_status', $this->event_status);
 
         return new CActiveDataProvider($this, array(

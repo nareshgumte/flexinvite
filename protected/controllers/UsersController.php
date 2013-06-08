@@ -14,7 +14,6 @@ class UsersController extends Controller {
     public function filters() {
         return array(
             'accessControl', // perform access control for CRUD operations
-            'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -30,7 +29,7 @@ class UsersController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('update'),
+                'actions' => array('update', 'admin'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -116,7 +115,9 @@ class UsersController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('SpUsers');
+        $criteria = new CDbCriteria();
+        $criteria->addNotInCondition('user_id', array(Yii::app()->user->user_id));
+        $dataProvider = new CActiveDataProvider('SpUsers', array('criteria' => $criteria));
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
@@ -127,6 +128,7 @@ class UsersController extends Controller {
      */
     public function actionAdmin() {
         $model = new SpUsers('search');
+        
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['SpUsers']))
             $model->attributes = $_GET['SpUsers'];

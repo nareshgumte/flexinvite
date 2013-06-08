@@ -7,8 +7,9 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'Create SpFriends', 'url' => array('create')),
-    array('label' => 'Manage SpFriends', 'url' => array('admin')),
+    array('label' => 'List Of Friends', 'url' => array('friends/index')),
+    array('label' => 'Create Friends', 'url' => array('friends/create')),
+    array('label' => 'Manage Friends', 'url' => array('friends/admin')),
 );
 ?>
 
@@ -18,26 +19,8 @@ $this->menu = array(
         <?php echo Yii::app()->user->getFlash('success'); ?>
     </div>
 <?php endif; ?>
-<div style="float:left;">
-    <?php echo CHtml::link("Add Friend", $this->createUrl('friends/create'), array("class" => 'btn btn-info', 'style' => 'margin-bottom:10px;')) ?>
-</div>
 
-<div style="float: right;">
-    <?php
-    $id = Yii::app()->controller->id;
-    $action = Yii::app()->controller->action->id;
 
-    echo CHtml::beginForm(CHtml::normalizeUrl(array($id . "/" . $action)), 'get', array('id' => 'filter-form', 'class' => 'form-search'));
-    echo CHtml::textField('q', (isset($_GET['q'])) ? $_GET['q'] : '', array(
-        'id' => 'q',
-        'class' => 'topsearch',
-        'placeholder' => 'Search..',
-    ));
-    echo "&nbsp;";
-    echo CHtml::submitButton('Search', array('name' => 'Search', 'class' => 'btn'));
-    echo CHtml::endForm();
-    ?>
-</div>
 
 <section id="tables">
     <!--<div class="page-header">

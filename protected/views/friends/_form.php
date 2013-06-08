@@ -76,10 +76,7 @@
     <div class="control-group">
         <?php echo CHtml::submitButton($model->isNewRecord ? 'Add' : 'Save',array('class' => 'btn')); ?>
     </div>
-
-    <div class="control-group">
-        <?php echo CHtml::link('Import Contacts', $this->createUrl('friends/importContacts'), array('class' => 'link')) ?>
-    </div>    
+ 
 
     <?php $this->endWidget(); ?>
 

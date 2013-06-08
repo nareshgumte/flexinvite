@@ -1,30 +1,26 @@
 <?php
-/* @var $this CredentialsController */
+/* @var $this InvitationHistoryController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs = array(
-    'List Of Credentials',
+    'Invitation History',
 );
 
 $this->menu = array(
-    array('label' => 'List Of Credentials', 'url' => array('credentials/index')),
-    array('label' => 'Create Credentials', 'url' => array('credentials/create')),
-    array('label' => 'Manage Credentials', 'url' => array('credentials/admin')),
+    array('label' => 'List Of Invitations Sent', 'url' => array('invitationHistory/index')),
+    array('label' => 'Manage InvitationHistory', 'url' => array('invitationHistory/admin')),
 );
 ?>
 
-<h1>Credentials</h1>
+<h1>Invitation History</h1>
 <section id="tables">
-    <!--<div class="page-header">
-        <h1>Tables</h1>
-    </div>
-    -->
     <table class="table table-bordered table-striped table-hover">
         <thead>
             <tr>
-                <th>User Name</th>
-                <th>Password</th>
-                <th>Source</th>
+                <th>Event Id</th>
+                <th>Event Name</th>
+                <th>Group Name</th>
+                <th>Invited Sent Date</th>
             </tr>
         </thead>
         <tbody>

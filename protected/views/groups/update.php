@@ -2,20 +2,20 @@
 /* @var $this SpGroupsController */
 /* @var $model SpGroups */
 
-$this->breadcrumbs=array(
-	'Sp Groups'=>array('index'),
-	$model->group_id=>array('view','id'=>$model->group_id),
-	'Update',
+$this->breadcrumbs = array(
+    'Sp Groups' => array('index'),
+    $model->group_id => array('view', 'id' => $model->group_id),
+    'Update',
 );
 
-$this->menu=array(
-	array('label'=>'List SpGroups', 'url'=>array('index')),
-	array('label'=>'Create SpGroups', 'url'=>array('create')),
-	array('label'=>'View SpGroups', 'url'=>array('view', 'id'=>$model->group_id)),
-	array('label'=>'Manage SpGroups', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'List Groups', 'url' => array('groups/index')),
+    array('label' => 'Create Groups', 'url' => array('groups/create')),
+    array('label' => 'View Groups', 'url' => array('groups/view', 'id' => $model->group_id)),
+    array('label' => 'Manage Groups', 'url' => array('groups/admin')),
 );
 ?>
 
-<h1>Update SpGroups <?php echo $model->group_id; ?></h1>
+<h1>Update Group #<?php echo $model->group_id; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model' => $model)); ?>

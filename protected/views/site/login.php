@@ -5,6 +5,11 @@
 
 $this->pageTitle = Yii::app()->name . ' - Login';
 $this->breadcrumbs = array(
+   
+);
+
+$this->menu = array(
+    array('label' => 'Flex Invite'),
 );
 ?>
 <?php if (Yii::app()->user->hasFlash('success')): ?>

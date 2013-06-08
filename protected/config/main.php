@@ -47,10 +47,10 @@ return array(
           ), */
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=secondproject',
+            'connectionString' => 'mysql:host=localhost;dbname=flexinvite',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'purpletalk',
+            'password' => 'padnet',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(

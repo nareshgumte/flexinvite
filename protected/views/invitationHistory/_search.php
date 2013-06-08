@@ -1,6 +1,6 @@
 <?php
-/* @var $this SpGroupMembersController */
-/* @var $model SpGroupMembers */
+/* @var $this InvitationHistoryController */
+/* @var $model InvitationHistory */
 /* @var $form CActiveForm */
 ?>
 
@@ -17,13 +17,23 @@
 	</div>
 
 	<div class="row">
+		<?php echo $form->label($model,'event_id'); ?>
+		<?php echo $form->textField($model,'event_id'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->label($model,'group_id'); ?>
 		<?php echo $form->textField($model,'group_id'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->label($model,'group_member_id'); ?>
-		<?php echo $form->textField($model,'group_member_id'); ?>
+		<?php echo $form->label($model,'invited_date'); ?>
+		<?php echo $form->textField($model,'invited_date'); ?>
+	</div>
+
+	<div class="row">
+		<?php echo $form->label($model,'user_id'); ?>
+		<?php echo $form->textField($model,'user_id'); ?>
 	</div>
 
 	<div class="row buttons">

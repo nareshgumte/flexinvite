@@ -14,10 +14,10 @@
         'clientOptions' => array(
             'validateOnSubmit' => true
         ),
-        'htmlOptions'=> array(
-            'enctype' => 'multipart/form-data'       
+        'htmlOptions' => array(
+            'enctype' => 'multipart/form-data'
         ),
-            ));
+    ));
     ?>
 
     <p class="note">
@@ -47,37 +47,62 @@
     <div class="control-group">
         <?php echo $form->labelEx($model, 'event_shortdesc', array('class' => 'control-label')); ?>
         <div class="controls">
-        <?php echo $form->textField($model, 'event_shortdesc', array('class' => 'input-xlarge')); ?>
-        <?php echo $form->error($model, 'event_shortdesc'); ?>
+            <?php echo $form->textField($model, 'event_shortdesc', array('class' => 'input-xlarge')); ?>
+            <?php echo $form->error($model, 'event_shortdesc'); ?>
         </div>    
     </div>
 
-   <div class="control-group">
+    <div class="control-group">
         <?php echo $form->labelEx($model, 'event_venue', array('class' => 'control-label')); ?>
         <div class="controls">
             <?php echo $form->textField($model, 'event_venue', array('class' => 'input-xlarge')); ?>
             <?php echo $form->error($model, 'event_venue'); ?>
         </div>    
     </div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'event_date_time', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php
+            $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                'model'=>$model,
+                'attribute'=>'event_date_time',
+                'name' => 'event_date_time',
+                // additional javascript options for the date picker plugin
+                'options' => array(
+                    'showAnim' => 'fold',
+                    'dateFormat' => 'yy-mm-dd',
+                    'minDate' => '0',
+                    'changeMonth' => true,
+                    'changeYear' => true,
+                ),
+                'htmlOptions' => array(
+                    'style' => 'height:20px;',
+                    'class' => 'input-xlarge'
+                ),
+            ));
+            ?>
+            <?php echo $form->error($model, 'event_date_time'); ?>
+        </div>    
+    </div>
 
     <div class="control-group">
-        <?php echo $form->labelEx($model, 'event_image', array('class' => 'control-label')); ?>
-         <div class="controls">
-            <?php echo $form->fileField($model, 'event_image', array('class' => 'input-xlarge')); ?>
+<?php echo $form->labelEx($model, 'event_image', array('class' => 'control-label')); ?>
+        <div class="controls">
+        <?php echo $form->fileField($model, 'event_image', array('class' => 'input-xlarge')); ?>
             <?php echo $form->error($model, 'event_image'); ?>
-         </div>    
+        </div>    
     </div>
-    <?php
-    if (isset($model->event_image)) {
-        echo CHtml::image(Yii::app()->request->baseUrl . '/images/eventImages/' . $model->event_image, '', array('height' => '50', 'width' => '50'));
-    }
-    ?>
+<?php
+if (isset($model->event_image)) {
+    echo CHtml::image(Yii::app()->request->baseUrl . '/images/eventImages/' . $model->event_image, '', array('height' => '50', 'width' => '50'));
+}
+?>
     <!--<div class="row buttons">-->
     <div class=" control-group">
-        <?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn')); ?>
+<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('class' => 'btn')); ?>
     </div>
 
-    <?php $this->endWidget(); ?>
+<?php $this->endWidget(); ?>
 
 </div>
 <!-- form -->

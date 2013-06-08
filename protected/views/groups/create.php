@@ -2,17 +2,18 @@
 /* @var $this SpGroupsController */
 /* @var $model SpGroups */
 
-$this->breadcrumbs=array(
-	'Sp Groups'=>array('index'),
-	'Create',
+$this->breadcrumbs = array(
+    'Groups' => array('index'),
+    'Create',
 );
 
-$this->menu=array(
-	array('label'=>'List SpGroups', 'url'=>array('index')),
-	array('label'=>'Manage SpGroups', 'url'=>array('admin')),
+$this->menu = array(
+    array('label' => 'Create Group', 'url' => array('groups/create')),
+    array('label' => 'List Groups', 'url' => array('groups/index')),
+    array('label' => 'Manage Groups', 'url' => array('groups/admin')),
 );
 ?>
 
 <h1>Create Group</h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model' => $model)); ?>

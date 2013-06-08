@@ -7,8 +7,9 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'Create SpEvents', 'url' => array('create')),
-    array('label' => 'Manage SpEvents', 'url' => array('admin')),
+    array('label' => 'Events List', 'url' => array('events/index')),
+    array('label' => 'Create Event', 'url' => array('events/create')),
+    array('label' => 'Manage Events', 'url' => array('events/admin')),
 );
 ?>
 
@@ -18,25 +19,8 @@ $this->menu = array(
         <?php echo Yii::app()->user->getFlash('success'); ?>
     </div>
 <?php endif; ?>
-<div style="float:left;">
-    <?php echo CHtml::link("Create Event", $this->createUrl('events/create'), array("class" => 'btn btn-info', 'style' => 'margin-bottom:10px;')) ?>
-</div>
-<div style="float: right;">
-    <?php
-    $id = Yii::app()->controller->id;
-    $action = Yii::app()->controller->action->id;
 
-    echo CHtml::beginForm(CHtml::normalizeUrl(array($id . "/" . $action)), 'get', array('id' => 'filter-form', 'class' => 'form-search'));
-    echo CHtml::textField('q', (isset($_GET['q'])) ? $_GET['q'] : '', array(
-        'id' => 'q',
-        'class' => 'topsearch',
-        'placeholder' => 'Search..',
-    ));
-    echo "&nbsp;";
-    echo CHtml::submitButton('Search', array('name' => 'Search', 'class' => 'btn'));
-    echo CHtml::endForm();
-    ?>
-</div>
+
 <section id="tables">
     <!--<div class="page-header">
         <h1>Tables</h1>
@@ -51,6 +35,7 @@ $this->menu = array(
                 <th>Event Shortdesc</th>
                 <th>Event Venue</th>
                 <th>Event Image</th>
+                <th>Event Date</th>
                 <th>Actions</th>
                 <th>Invite</th>
             </tr>

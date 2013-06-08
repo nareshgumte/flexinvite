@@ -3,7 +3,7 @@
 /* @var $model SpCredentials */
 
 $this->breadcrumbs=array(
-	'Sp Credentials'=>array('index'),
+	'Credentials'=>array('index'),
 	$model->id=>array('view','id'=>$model->id),
 	'Update',
 );
@@ -16,6 +16,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update SpCredentials <?php echo $model->id; ?></h1>
+<h1>Update Credentials <?php echo $model->id; ?></h1>
 
-<?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php echo $this->renderPartial('_form', array('model'=>$model,'item' => $item)); ?>

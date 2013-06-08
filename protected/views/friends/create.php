@@ -7,10 +7,14 @@ $this->breadcrumbs = array(
 );
 
 $this->menu = array(
-    array('label' => 'List SpFriends', 'url' => array('index')),
-    array('label' => 'Manage SpFriends', 'url' => array('admin')),
+    array('label' => 'List Friends', 'url' => array('friends/index')),
+    array('label' => 'Create Friends', 'url' => array('friends/create')),
+    array('label' => 'Manage Friends', 'url' => array('friends/admin')),
+    array('label' => 'Import Contacts', 'url' => array('friends/importContacts')),
+    
 );
 ?>
+   
 
 <h1>Add A Friend</h1>
 

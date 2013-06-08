@@ -1,6 +1,6 @@
 <?php
 
-class CredentialsController extends Controller {
+class InvitationHistoryController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -29,11 +29,9 @@ class CredentialsController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index', 'create', 'update','admin'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
                 'users' => array('admin'),
             ),
             array('deny', // deny all users
@@ -57,39 +55,19 @@ class CredentialsController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new SpCredentials;
-        $item = array();
+        $model = new InvitationHistory;
+
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
-        $criteria = new CDbCriteria();
-        $criteria->compare('user_id', Yii::app()->user->user_id);
-        $criteria->compare('type', 1);
-        $result1 = $model->find($criteria);
-        $criteria2 = new CDbCriteria();
-        $criteria2->compare('user_id', Yii::app()->user->user_id);
-        $criteria2->compare('type', 2);
-        $result2 = $model->find($criteria2);
-        if (!isset($result1->type) && !isset($result2->type)) {
-            $item[1] = 'gmail credentials';
-            $item[2] = 'way2sms credentials';
-        } elseif (!isset($result1->type)) {
-            $item[1] = 'gmail credentials';
-        } elseif (!isset($result2->type)) {
-            $item[2] = 'way2sms credentials';
-        } else {
-            $this->redirect($this->createUrl('events/index'));
-        }
-        if (isset($_POST['SpCredentials'])) {
-            $model->attributes = $_POST['SpCredentials'];
-            $model->user_id = Yii::app()->user->user_id;
-            if ($model->validateCredentials($_POST['SpCredentials'])) {
-                if ($model->save())
-                    $this->redirect($this->createUrl('events/index'));
-            }
+
+        if (isset($_POST['InvitationHistory'])) {
+            $model->attributes = $_POST['InvitationHistory'];
+            if ($model->save())
+                $this->redirect(array('view', 'id' => $model->id));
         }
 
         $this->render('create', array(
-            'model' => $model, 'item' => $item
+            'model' => $model,
         ));
     }
 
@@ -99,35 +77,19 @@ class CredentialsController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-        $item = array();
         $model = $this->loadModel($id);
-        $criteria2 = new CDbCriteria();
-        $criteria2->compare('user_id', Yii::app()->user->user_id);
-        $criteria2->compare('type', 2);
-        $result2 = $model->find($criteria2);
-        if (!isset($result1->type) && !isset($result2->type)) {
-            $item[1] = 'gmail credentials';
-            $item[2] = 'way2sms credentials';
-        } elseif (!isset($result1->type)) {
-            $item[1] = 'gmail credentials';
-        } elseif (!isset($result2->type)) {
-            $item[2] = 'way2sms credentials';
-        } else {
-            $this->redirect($this->createUrl('events/index'));
-        }
+
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['SpCredentials'])) {
-            $model->attributes = $_POST['SpCredentials'];
-
+        if (isset($_POST['InvitationHistory'])) {
+            $model->attributes = $_POST['InvitationHistory'];
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
 
         $this->render('update', array(
             'model' => $model,
-            'item' => $item
         ));
     }
 
@@ -149,8 +111,11 @@ class CredentialsController extends Controller {
      */
     public function actionIndex() {
         $criteria = new CDbCriteria();
-        $criteria->addInCondition('user_id', array(Yii::app()->user->user_id));
-        $dataProvider = new CActiveDataProvider('SpCredentials', array('criteria' => $criteria));
+        if (!Yii::app()->user->isAdmin) {
+            $criteria->addInCondition('user_id', array(Yii::app()->user->user_id));
+        }
+        $criteria->order = 'id asc';
+        $dataProvider = new CActiveDataProvider('InvitationHistory', array('criteria' => $criteria));
         $this->render('index', array(
             'dataProvider' => $dataProvider,
         ));
@@ -160,12 +125,10 @@ class CredentialsController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        $criteria = new CDbCriteria();
-        $criteria->addInCondition('user_id', array(Yii::app()->user->user_id));
-        $model = new SpCredentials('search');
+        $model = new InvitationHistory('search');
         $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['SpCredentials']))
-            $model->attributes = $_GET['SpCredentials'];
+        if (isset($_GET['InvitationHistory']))
+            $model->attributes = $_GET['InvitationHistory'];
 
         $this->render('admin', array(
             'model' => $model,
@@ -175,12 +138,10 @@ class CredentialsController extends Controller {
     /**
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
-     * @param integer $id the ID of the model to be loaded
-     * @return SpCredentials the loaded model
-     * @throws CHttpException
+     * @param integer the ID of the model to be loaded
      */
     public function loadModel($id) {
-        $model = SpCredentials::model()->findByPk($id);
+        $model = InvitationHistory::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -188,10 +149,10 @@ class CredentialsController extends Controller {
 
     /**
      * Performs the AJAX validation.
-     * @param SpCredentials $model the model to be validated
+     * @param CModel the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'sp-credentials-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'invitation-history-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }

@@ -9,8 +9,6 @@ $this->breadcrumbs = array(
 
 $this->menu = array(
     array('label' => 'List InvitationHistory', 'url' => array('index')),
-    array('label' => 'Create InvitationHistory', 'url' => array('create')),
-    array('label' => 'Update InvitationHistory', 'url' => array('update', 'id' => $model->id)),
     array('label' => 'Delete InvitationHistory', 'url' => '#', 'linkOptions' => array('submit' => array('delete', 'id' => $model->id), 'confirm' => 'Are you sure you want to delete this item?')),
     array('label' => 'Manage InvitationHistory', 'url' => array('admin')),
 );

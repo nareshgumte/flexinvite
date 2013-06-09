@@ -8,7 +8,7 @@ $this->breadcrumbs = array(
 
 $this->menu = array(
     array('label' => 'List Of GroupMembers', 'url' => array('groupMembers/index')),
-    array('label' => 'Create GroupMembers', 'url' => array('groupMembers/create')),
+    array('label' => 'Add Members to Group', 'url' => array('groupMembers/create')),
     array('label' => 'Manage GroupMembers', 'url' => array('groupMembers/admin')),
 );
 ?>

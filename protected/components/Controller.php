@@ -21,6 +21,7 @@ class Controller extends CController {
             $criteria->addInCondition('type', array(1, 2));
             
             $userDe = SpCredentials::model()->find($criteria);
+            //print_r($_SERVER['HTTP_REFERER']);
             if (count($userDe) !=1) {
                 if (Yii::app()->controller->id != 'credentials')
                     $this->redirect($this->createUrl('credentials/create'));

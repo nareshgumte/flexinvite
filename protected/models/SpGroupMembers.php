@@ -83,7 +83,7 @@ class SpGroupMembers extends CActiveRecord {
     }
 
     public function getFriendName() {
-        return SpFriends::model()->findByPk($this->id)->firstname;
+        return SpFriends::model()->findByPk($this->group_member_id)->firstname;
     }
 
 }

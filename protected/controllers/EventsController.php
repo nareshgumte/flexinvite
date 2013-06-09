@@ -208,9 +208,22 @@ class EventsController extends Controller {
         }
     }
 
+    /**
+     * Invite Friendss for an event 
+     * @param integer $id Event id
+     * @throws CHttpException
+     */
     public function actioninviteFriends($id) {
+        $flag = false;
         $user_id = Yii::app()->user->user_id;
-        $event_id = $id;
+        //get Event Details
+        $criteria4 = new CDbCriteria();
+        $criteria4->compare('event_id', $id);
+        $eventDetails = SpEvents::model()->findAll($criteria4);
+        if (is_null($eventDetails)) {
+            throw new CHttpException(401);
+        }
+        $friends = new SpFriends();
         $criteria = new CDbCriteria;
         $criteria->compare('user_id', $user_id);
         if (isset($_GET['q'])) {
@@ -220,11 +233,62 @@ class EventsController extends Controller {
             $criteria->addSearchCondition('email', $q, true, 'OR');
             $criteria->addSearchCondition('phone', $q, true, 'OR');
         }
+
         $criteria2 = new CDbCriteria();
         $criteria2->compare('user_id', $user_id);
         $groups = SpGroups::model()->findAll($criteria2);
         if (isset($_POST['sendInvite']) && $_POST['sendInvite'] = "sendInvite") {
-            echo "<pre>";print_r($_POST);exit;
+            $group_id = $_POST['group_id'];
+            //get the group members
+            $criteria3 = new CDbCriteria();
+            $criteria3->compare('group_id', $group_id);
+            $groupMembers = SpGroupMembers::model()->findAll($criteria3);
+            $sms = new Way2Sms();
+            $username = Commons::getCredentials('username', 1);
+            $password = Commons::getCredentials('password', 1);
+            $result = $sms->login($username, $password);
+            foreach ($groupMembers as $key => $value) {
+                if (isset($_POST['send_sms'])) {
+                    //send messages to those friends who have mobiles 
+                    $phone = $friends->getInfo($value->group_member_id, 'phone');
+                    $message = $eventDetails[0]->event_shortdesc;
+                    $receiver = Commons::parseName($phone, true);
+                    if ($result) {
+                        $smsStatus = $sms->send($receiver, $message);
+                        if ($smsStatus) {
+                            $flag = true;
+                        } else {
+                            $flag = false;
+                        }
+                    } else {
+                        Yii::app()->user->setFlash('error', 'Invali Credentials');
+                    }
+                    // $send = Commons::sendSms($phone, $message);
+//                    if ($send) {
+//                        $flag = true;
+//                    }
+                }
+                if (isset($_POST['send_email'])) {
+                    //send mail along with attachment
+                    $to = $friends->getInfo($value->group_member_id, 'email');
+                    $subject = "You have Invited to " . $eventDetails[0]->event_name;
+                    $body = $eventDetails[0]->event_desc;
+                    $from = Yii::app()->params['adminEmail'];
+                    //$attachment=  array(Yii::app()->basePath."/../images/eventImages/admin4691.jpg");
+                    if (Commons::sendMail($to, $subject, $body, $from)) {
+                        $flag = true;
+                    }
+                }
+            }
+            $sms->logout();
+            if ($flag) {
+                $invitationHistory = new InvitationHistory();
+                $invitationHistory->event_id = $id;
+                $invitationHistory->group_id = $group_id;
+                $invitationHistory->user_id = Yii::app()->user->user_id;
+                $invitationHistory->save(false);
+                Yii::app()->user->setFlash('success', 'Successfully Invited');
+            }
         }
 
         $this->render("friends_list", array('select' => $groups));

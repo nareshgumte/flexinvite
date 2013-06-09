@@ -177,5 +177,5 @@ class SpCredentials extends CActiveRecord {
         }
         return $middle;
     }
-
+    
 }

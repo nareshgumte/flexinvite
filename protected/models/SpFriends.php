@@ -98,8 +98,8 @@ class SpFriends extends CActiveRecord {
         $criteria->compare('whois', $this->whois, true);
 
         return new CActiveDataProvider($this, array(
-                    'criteria' => $criteria,
-                ));
+            'criteria' => $criteria,
+        ));
     }
 
     public function insertFriends($contacts, $whois) {
@@ -133,6 +133,13 @@ class SpFriends extends CActiveRecord {
         $criteria->compare('user_id', $user_id);
         $friendsList = SpFriends::model()->findAll($criteria);
         return $friendsList;
+    }
+
+    public function getInfo($id, $value) {
+        $criteria = new CDbCriteria;
+        $criteria->compare('id', $id);
+        $friendsInfo = SpFriends::model()->findAll($criteria);
+        return $friendsInfo[0]->$value;
     }
 
 }

@@ -89,7 +89,6 @@ class GroupMembersController extends Controller {
             }
         }
         $this->render("friends_list", array('dataProvider' => $dataProvider, 'select' => $groups));
-       
     }
 
     /**
@@ -145,6 +144,10 @@ class GroupMembersController extends Controller {
         $user_id = Yii::app()->user->user_id;
         $criteria2 = new CDbCriteria();
         $criteria2->compare('user_id', $user_id);
+        if (isset($_GET['q'])) {
+            $q = $_GET['q'];
+            $criteria2->addSearchCondition('group_id', $q, true);
+        }
         $groups = SpGroups::model()->findAll($criteria2);
         $dataProvider = new CActiveDataProvider('SpGroupMembers');
         if (isset($_POST['selectGroup'])) {
@@ -167,7 +170,7 @@ class GroupMembersController extends Controller {
      * Manages all models.
      */
     public function actionAdmin() {
-        
+
         $model = new SpGroupMembers('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['SpGroupMembers']))

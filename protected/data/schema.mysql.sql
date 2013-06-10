@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2013 at 09:33 AM
+-- Generation Time: Jun 10, 2013 at 10:44 PM
 -- Server version: 5.5.31
 -- PHP Version: 5.3.10-1ubuntu3.6
 
@@ -27,7 +27,15 @@ CREATE TABLE IF NOT EXISTS `sp_credentials` (
   `password` varchar(64) DEFAULT NULL,
   `type` tinyint(1) DEFAULT NULL COMMENT '1-gmail,2-way2sms',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `sp_credentials`
+--
+
+INSERT INTO `sp_credentials` (`id`, `user_id`, `username`, `password`, `type`) VALUES
+(1, 10, 'pranay.kumar658@gmail.com', '9395399503', 1),
+(2, 10, '8121779990', 'nareshgumte', 2);
 
 -- --------------------------------------------------------
 
@@ -47,7 +55,15 @@ CREATE TABLE IF NOT EXISTS `sp_events` (
   `event_status` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`event_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `sp_events`
+--
+
+INSERT INTO `sp_events` (`event_id`, `user_id`, `event_name`, `event_desc`, `event_shortdesc`, `event_venue`, `event_image`, `event_date_time`, `event_status`) VALUES
+(5, 10, 'My First Event', 'This is Event  to test Come to Tea', 'Ni Biscuit galu unaru ga ramante Rara ra', 'Purpletalk Aunty Tea Shop', '', '2013-06-09 18:30:00', 1),
+(6, 10, 'testing ', 'testinf', 'testinf', 'testi', 'naresh7294.jpg', '2013-06-10 18:30:00', 1);
 
 -- --------------------------------------------------------
 
@@ -65,7 +81,18 @@ CREATE TABLE IF NOT EXISTS `sp_friends` (
   `whois` varchar(128) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=86 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=91 ;
+
+--
+-- Dumping data for table `sp_friends`
+--
+
+INSERT INTO `sp_friends` (`id`, `user_id`, `firstname`, `lastname`, `email`, `phone`, `whois`) VALUES
+(86, 10, 'Bharadwaj', 'Gampa', 'bharadwaj@purpletalk.com', '+91-897-767-2999', 'Purpletalk Collegue'),
+(87, 10, 'Phani', 'Tanniru', 'phanindra@purpletalk.com', '+91-995-108-4686', 'Purpletalk Collegue'),
+(88, 10, 'Sudheer', 'Pola', 'sudheer.p@purpletalk.com', '+91-967-673-6284', 'Purpletalk Collegue'),
+(89, 10, 'Naresh', 'Gumte', 'naresh@purpletalk.com', '+91-998-514-3256', 'Purpletalk Collegue'),
+(90, 10, 'Mahesh', 'Kondapalli', 'mahesh.k@purpletalk.com', '+91-986-642-6195', 'Purpletalk Collegue');
 
 -- --------------------------------------------------------
 
@@ -79,7 +106,15 @@ CREATE TABLE IF NOT EXISTS `sp_groups` (
   `group_name` varchar(64) NOT NULL,
   PRIMARY KEY (`group_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `sp_groups`
+--
+
+INSERT INTO `sp_groups` (`group_id`, `user_id`, `group_name`) VALUES
+(4, 10, 'Tea Group'),
+(5, 10, 'TestInvite');
 
 -- --------------------------------------------------------
 
@@ -96,7 +131,19 @@ CREATE TABLE IF NOT EXISTS `sp_group_members` (
   KEY `group_id` (`group_id`),
   KEY `id` (`id`),
   KEY `id_2` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `sp_group_members`
+--
+
+INSERT INTO `sp_group_members` (`id`, `group_id`, `group_member_id`) VALUES
+(13, 4, 86),
+(14, 4, 87),
+(15, 4, 88),
+(16, 4, 89),
+(17, 4, 90),
+(18, 5, 89);
 
 -- --------------------------------------------------------
 
@@ -114,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `sp_invitation_history` (
   KEY `event_id` (`event_id`),
   KEY `group_id` (`group_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 -- --------------------------------------------------------
 
@@ -169,13 +216,13 @@ ALTER TABLE `sp_groups`
 -- Constraints for table `sp_group_members`
 --
 ALTER TABLE `sp_group_members`
-  ADD CONSTRAINT `sp_group_members_ibfk_3` FOREIGN KEY (`group_member_id`) REFERENCES `sp_friends` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `sp_group_members_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `sp_groups` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `sp_group_members_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `sp_groups` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sp_group_members_ibfk_3` FOREIGN KEY (`group_member_id`) REFERENCES `sp_friends` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `sp_invitation_history`
 --
 ALTER TABLE `sp_invitation_history`
-  ADD CONSTRAINT `sp_invitation_history_ibfk_6` FOREIGN KEY (`user_id`) REFERENCES `sp_users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `sp_invitation_history_ibfk_4` FOREIGN KEY (`event_id`) REFERENCES `sp_events` (`event_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `sp_invitation_history_ibfk_5` FOREIGN KEY (`group_id`) REFERENCES `sp_groups` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `sp_invitation_history_ibfk_5` FOREIGN KEY (`group_id`) REFERENCES `sp_groups` (`group_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `sp_invitation_history_ibfk_6` FOREIGN KEY (`user_id`) REFERENCES `sp_users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;

@@ -14,7 +14,7 @@ class FriendsController extends Controller {
     public function filters() {
         return array(
             'accessControl', // perform access control for CRUD operations
-            //'postOnly + delete', // we only allow deletion via POST request
+                //'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -26,11 +26,11 @@ class FriendsController extends Controller {
     public function accessRules() {
         return array(
             array('allow', // allow all users to perform 'index' and 'view' actions
-                'actions' => array('view','delete'),
+                'actions' => array('view', 'delete'),
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('index','create', 'update', 'admin', 'delete', 'importContacts'),
+                'actions' => array('index', 'create', 'update', 'admin', 'delete', 'importContacts', 'sendMessage'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -91,7 +91,7 @@ class FriendsController extends Controller {
 
         if (isset($_POST['SpFriends'])) {
             $model->attributes = $_POST['SpFriends'];
-            if ($model->save()){
+            if ($model->save()) {
                 //$this->redirect(array('view', 'id' => $model->id));
                 Yii::app()->user->setFlash('success', 'Successfully updated');
                 $this->redirect(array('friends/'));
@@ -109,46 +109,46 @@ class FriendsController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-        
-        
+
+
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax'])){
+        if (!isset($_GET['ajax'])) {
             //$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
             $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('friends/'));
-        }    
+        }
     }
 
     /**
      * Lists all models.
      */
     public function actionIndex() {
-        
+
         $criteria = new CDbCriteria();
         //get the events
         if (isset($_GET['q'])) {
             $q = $_GET['q'];
-            $criteria->addSearchCondition('firstname', $q, true,'OR');
+            $criteria->addSearchCondition('firstname', $q, true, 'OR');
             //$criteria->addSearchCondition('lastname', $q, true);
-            $criteria->addSearchCondition('lastname', $q, true,'OR');
-            $criteria->addSearchCondition('whois', $q, true,'OR');
+            $criteria->addSearchCondition('lastname', $q, true, 'OR');
+            $criteria->addSearchCondition('whois', $q, true, 'OR');
         }
-        if(!Yii::app()->user->isAdmin){
+        if (!Yii::app()->user->isAdmin) {
             $user_id = Yii::app()->user->user_id;
             $criteria->addSearchCondition('user_id', $user_id, true);
-        }    
+        }
         $criteria->order = "id ASC";
-        
+
         //$model = IpLogin::model()->findAll($criteria);
         $dataProvider = new CActiveDataProvider('SpFriends', array(
-                    'criteria' => $criteria,
-                    'pagination' => array(
-                        'pageSize' => 10,
-                    ),
-                ));
-        
-        
+            'criteria' => $criteria,
+            'pagination' => array(
+                'pageSize' => 10,
+            ),
+        ));
+
+
         //$dataProvider = new CActiveDataProvider('SpFriends');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
@@ -200,14 +200,14 @@ class FriendsController extends Controller {
         $oks = array();
         $import_ok = false;
         $done = false;
-        
-        
+
+
         if (isset($_POST['OpenInviterForm'])) {
             $inviter = new openinviter();
             $oi_services = $inviter->getPlugins();
- 
+
             $provider = $inviter->getPluginByDomain($_POST['OpenInviterForm']['email']);
-            
+
             if (!empty($provider)) {
                 if (isset($oi_services['email'][$provider]))
                     $plugType = 'email';
@@ -218,48 +218,110 @@ class FriendsController extends Controller {
             }
             else
                 echo "Email missing !";
-            
-            
-             if (empty($_POST['OpenInviterForm']['password']))
-                   echo "Password missing !";
-             if (count($ers) == 0) {
-                    $inviter->startPlugin($provider);
+
+
+            if (empty($_POST['OpenInviterForm']['password']))
+                echo "Password missing !";
+            if (count($ers) == 0) {
+                $inviter->startPlugin($provider);
+                $internal = $inviter->getInternalError();
+
+                $contacts = $inviter->getMyContacts();
+                if ($internal)
+                    echo $internal;
+                elseif (!$inviter->login($_POST['OpenInviterForm']['email'], $_POST['OpenInviterForm']['password'])) {
                     $internal = $inviter->getInternalError();
-        
-                    $contacts = $inviter->getMyContacts();
-                    if ($internal)
-                        echo $internal;
-                    elseif (!$inviter->login($_POST['OpenInviterForm']['email'], $_POST['OpenInviterForm']['password'])) {
-                        $internal = $inviter->getInternalError();
-                        $msg = $internal ? $internal : "Login failed. Please check the email and password you have provided and try again later !";
-                        Yii::app()->user->setFlash('error', $msg); 
-                    } elseif (false === $contacts = $inviter->getMyContacts()){
-                        $msg =  "Unable to get contacts !";
-                        Yii::app()->user->setFlash('error', $msg); 
-                    }
-                    else {
-                        $import_ok = true;
-                        $step = 'send_invites';
-                        $_POST['oi_session_id'] = $inviter->plugin->getSessionID();
-                        
-                    }
-              } /// end of count
-              
-              if (!empty($contacts)) {
-                   $model1 = new SpFriends;
-                   $res =  $model1->insertFriends($contacts,$provider);
-                   if($res){
-                       Yii::app()->user->setFlash('success', 'Successfully inserted all contacts'); 
-                       $this->redirect(array('admin'));
-                   }
-              }
+                    $msg = $internal ? $internal : "Login failed. Please check the email and password you have provided and try again later !";
+                    Yii::app()->user->setFlash('error', $msg);
+                } elseif (false === $contacts = $inviter->getMyContacts()) {
+                    $msg = "Unable to get contacts !";
+                    Yii::app()->user->setFlash('error', $msg);
+                } else {
+                    $import_ok = true;
+                    $step = 'send_invites';
+                    $_POST['oi_session_id'] = $inviter->plugin->getSessionID();
+                }
+            } /// end of count
+
+            if (!empty($contacts)) {
+                $model1 = new SpFriends;
+                $res = $model1->insertFriends($contacts, $provider);
+                if ($res) {
+                    Yii::app()->user->setFlash('success', 'Successfully inserted all contacts');
+                    $this->redirect(array('admin'));
+                }
+            }
         } /// end of post method
 
         $this->render('importContacts', array(
             'model' => $model,
         ));
-        
-         
+    }
+
+    /**
+     * sendMessage
+     */
+    public function actionSendMessage() {
+        $flag = false;
+        $criteria = new CDbCriteria();
+        $criteria->compare('user_id', Yii::app()->user->user_id);
+        $criteria->condition = 'phone!=""';
+        $model = SpFriends::model()->findAll($criteria);
+        $friends = new SpFriends();
+        $criteria2 = new CDbCriteria();
+        $criteria2->compare('user_id', Yii::app()->user->user_id);
+        $groups = SpGroups::model()->findAll($criteria2);
+        $sms = new Way2Sms();
+        $username = Commons::getCredentials('username', 1);
+        $password = Commons::getCredentials('password', 1);
+        $result = $sms->login($username, $password);
+        if (isset($_POST['sendMessage'])) {
+
+            //send messages to those friends who have mobiles 
+            $phone = $_POST['phone'];
+            $message = $_POST['message'];
+            $receiver = Commons::parseName($phone, true);
+            if ($result) {
+                $smsStatus = $sms->send($receiver, $message);
+                if ($smsStatus) {
+                    $flag = true;
+                } else {
+                    $flag = false;
+                }
+            } else {
+                Yii::app()->user->setFlash('error', 'Invali Credentials');
+            }
+        }
+        if (isset($_POST['sendMessageGroup'])) {
+            $criteria3 = new CDbCriteria();
+            $criteria3->compare('group_id', $_POST['group_id']);
+            $groupMembers = SpGroupMembers::model()->findAll($criteria3);
+            foreach ($groupMembers as $key => $value) {
+                //send messages to those friends who have mobiles 
+                $phone = $friends->getInfo($value->group_member_id, 'phone');
+                $message = $_POST['message'];
+                $receiver = Commons::parseName($phone, true);
+                if ($result) {
+                    $smsStatus = $sms->send($receiver, $message);
+                    if ($smsStatus) {
+                        $flag = true;
+                    } else {
+                        $flag = false;
+                    }
+                } else {
+                    Yii::app()->user->setFlash('error', 'Invali Credentials');
+                }
+            }
+        }
+        $sms->logout();
+        if ($flag) {
+
+            Yii::app()->user->setFlash('success', 'Successfully Invited');
+        }
+        $this->render('send_sms', array(
+            'friends' => $model,
+            'groups' => $groups
+        ));
     }
 
 }

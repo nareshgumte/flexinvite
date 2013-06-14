@@ -86,6 +86,9 @@
                                                 <?php echo CHtml::link('Invitaions History', $this->createUrl('InvitationHistory/index')); ?>
                                             </li>
                                             <li>
+                                                <?php echo CHtml::link('Send Message', $this->createUrl('friends/sendMessage')); ?>
+                                            </li>
+                                            <li>
                                                 <?php echo CHtml::link("Logout", $this->createUrl('site/logout')) ?>
                                             </li>
                                         </li>
